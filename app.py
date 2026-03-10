@@ -84,16 +84,12 @@ def load_kb():
 
     try:
 
-        import os
-
-        persist_dir = os.path.join("data", "vector_store")
+        persist_dir = "data/vector_store"
 
         client = chromadb.PersistentClient(path=persist_dir)
 
-        col = client.get_or_create_collection(
-            name="ev_manuals",
-            metadata={"hnsw:space": "cosine"}
-        )
+        # load the existing collection created by LangChain
+        col = client.get_collection("langchain")
 
         model = SentenceTransformer("all-MiniLM-L6-v2")
 
