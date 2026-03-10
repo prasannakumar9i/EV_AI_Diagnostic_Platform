@@ -149,7 +149,7 @@ def build_answer(question, docs_dists):
 
         for i, (doc, dist) in enumerate(docs_dists, 1):
 
-            similarity = round((1 - dist) * 100, 1)
+            similarity = round((1 / (1 + dist)) * 100, 1)
 
             lines.append(f"**Result {i} — relevance {similarity}%**")
 
