@@ -50,43 +50,46 @@ The AI then returns answers grounded in official documentation.
 
 ---
 
-# Project Structure
 
-```
+## 📁 Project Structure
+
 EV_AI_Diagnostic_Platform/
 │
-├── notebooks/
-│   └── EV_AI_Diagnostic_Platform.ipynb
+├── data/                          # Raw and processed EV data
+│
+├── ev_project/                    # Core EV project modules
+│
 ├── pages/
-│   └──ev_dashboard.py
+│   └── ev_dashboard.py            # Streamlit multi-page dashboard
+│
 ├── src/
 │   ├── can_bus/
-│   │   └── simulator.py
+│   │   └── simulator.py           # CAN bus simulation
 │   ├── obd/
-│   │   └── dtc_reader.py
+│   │   └── dtc_reader.py          # OBD-II DTC fault reader
 │   ├── battery/
-│   │   └── ekf_soc.py
+│   │   └── ekf_soc.py             # Battery SOC estimator (EKF)
 │   ├── data_collection/
-│   │   └── pdf_downloader.py
+│   │   └── pdf_downloader.py      # Automated EV manual downloader
 │   ├── document_processing/
-│   │   └── pipeline.py
+│   │   └── pipeline.py            # PDF extraction & chunking pipeline
 │   ├── embeddings/
-│   │   └── vector_store.py
+│   │   └── vector_store.py        # FAISS / ChromaDB vector store
 │   ├── rag/
-│   │   └── pipeline.py
+│   │   └── pipeline.py            # RAG pipeline (LangChain + OpenAI)
 │   ├── ml/
-│   │   └── models.py
+│   │   └── models.py              # XGBoost, Isolation Forest, LSTM
 │   ├── api/
-│   │   └── main.py
+│   │   └── main.py                # FastAPI microservices API
 │   └── dashboard/
-│       ├── chatbot_app.py
-│       └── fleet_dashboard.py
+│       ├── chatbot_app.py         # AI diagnostic chatbot (Streamlit)
+│       └── fleet_dashboard.py     # Fleet analytics dashboard
 │
-├── requirements.txt
-├── .env.example
-├── .gitignore
-└── README.md
-```
+├── app.py                         # Main Streamlit app entry point
+├── ev_app.py                      # EV-specific app runner
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project documentation
+
 
 ---
 
