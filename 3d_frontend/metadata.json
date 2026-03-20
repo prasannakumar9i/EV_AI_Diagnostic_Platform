@@ -1,0 +1,5 @@
+{
+  "name": "EV AI Diagnostic Platform",
+  "description": "A futuristic AI-powered diagnostic platform for electric vehicles, featuring RAG, CAG, and 3D battery analysis.",
+  "requestFramePermissions": []
+}
